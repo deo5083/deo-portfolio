@@ -53,11 +53,11 @@
                             <div class="card-body">
                                 <h5 class="card-title">David Ortiz</h5>
                                 <p class="card-text">
-                                    The Pennsylvania State University, Center Valley, PA Fall 2019 <br />
+                                    The Pennsylvania State University <br />
                                     Bachelor of Science in Information Sciences and Technology, Design and Development – 3.89 GPA
                                 </p>
-                                <%--<a href="#" class="btn btn-primary" onclick="window.open('images/Resume_DavidOrtiz.pdf');">Download resume</a>--%>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">View resume</button>
+                                <a href="#" class="btn btn-primary" onclick="window.open('images/Resume_DavidOrtiz.pdf');">View resume</a>
+<%--                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">View resume</button>--%>
 
                             </div>
                         </div>
@@ -67,13 +67,13 @@
             </div>
         </div>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <%--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-body modalResume" >
         
           <embed src="images/Resume_DavidOrtiz.pdf" style="height:100%; width:100%;"/>
-<%--          <iframe src="images/Resume_DavidOrtiz.pdf" style="width:100%; height:100%;" ></iframe>--%>
+          <iframe src="images/Resume_DavidOrtiz.pdf" style="width:100%; height:100%;" ></iframe>
 
       </div>
       <div class="modal-footer">
@@ -82,7 +82,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>--%>
 
 
     <!-- Optional JavaScript -->
