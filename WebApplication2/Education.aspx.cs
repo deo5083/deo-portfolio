@@ -18,18 +18,15 @@ namespace WebApplication2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            HiddenButton_selectDegree.Style.Add("visibility", "hidden");
+
             string degreeFilePath = Server.MapPath("/App_Data/degrees.txt");
 
             storage = new Storage(degreeFilePath);
             degreeList = storage.getDegreeList();
-
-            PopulateGridView(degreeList);
-
+            
             GenerateDivs(degreeList);
-
-            //cards_div.InnerHtml = GenerateDivs(degreeList); 
-
-
+            
         }
 
         private void GenerateDivs(List<Degree> degreeList)
@@ -38,47 +35,24 @@ namespace WebApplication2
 
             foreach (Degree degree in degreeList)
             {
-                /*
-                div += "<div class='card mb-3' style='width: 40rem;'>" +
-                            "<div class='card-body'>" +
-                                "<h5 class='card-title'>" + degree.getDegree_type() + " " + degree.getMajor() + " - " + degree.getMajor_option() + "</h5>" +
-                                    "<p class='card-text'>With supporting text below as a natural lead-in to additional content.</p>" +
-                                    "<p class='card-text'><small class='text-muted'>Last updated 3 mins ago</small></p>" +
-                             "</div></div>";
-*/
 
-                div += "<a href = '#' class='list-group-item list-group-item-action flex-column align-items-start'>" +
+                string majopt = (degree.getMajor_option()).Replace(' ', '_');
+
+                div += "<a href='#' class='list-group-item list-group-item-action flex-column align-items-start' onClick='selectClicked(\""+majopt+"\")'>" +
                             "<div class='d-flex w-100 justify-content-between'>" +
-                                "<h5 class='mb-1'>" + degree.getDegree_type() + " " + degree.getMajor() + " - " + degree.getMajor_option() + "</h5>" +
+                                "<h5 class='mb-1'>" + degree.getSchool() + "</h5>" +
                             "</div>" +
-                                "<p class='mb-1'>Donec id elit non mi porta gravida at eget metus.Maecenas sed diam eget risus varius blandit.</p>" +
-
-                                "<small class='text-muted'>Last updated 3 mins ago</small></p>" +
-                             
-                             "</a>";
-
-            
-    
-
-
-
+                                "<p class='mb-1'>"+ degree.getMajor() +" - " + degree.getMajor_option() + "</p>" +
+                                "<small class='text-muted'>Graduated "+degree.getGrad_date()+"</small></p>" +
+                        "</a>";
+                
+                
             }
 
             cards_div.InnerHtml = div;
-            //return div;
-        }
-
-        private void PopulateGridView(List<Degree> degreeList)
-        {
-
-
-            GridView_Education.DataSource = degreeList;
-            GridView_Education.DataBind();
-
 
         }
-
-
+        
         private static DataTable ConvertToDatatable<T>(List<T> data)
         {
             PropertyDescriptorCollection props = TypeDescriptor.GetProperties(typeof(T));
@@ -103,6 +77,34 @@ namespace WebApplication2
             }
             return table;
         }
+
+        protected void HiddenButton_selectDegree_Click(object sender, EventArgs e)
+        {
+            string degree_clicked = HiddenField_selectDegree.Value;
+            Panel_degreeInfo.Visible = true;
+            Label_Type.Visible = true;
+
+            foreach (Degree degree in degreeList)
+            {
+                string major_option = degree_clicked.Replace("_"," ");
+
+                if (degree.getMajor_option().Equals(major_option))
+                {
+                    Label_Degree.Text = degree.getMajor() + ", " + degree.getMajor_option();
+                    Label_school.Text = degree.getSchool();
+                    Label_GPA.Text = degree.getGPA();
+                    Label_gradDate.Text = degree.getGrad_date();
+                    Label_Type.Text = degree.getDegree_type();
+                }
+                
+            }
+
+
+           
+
+        }
+        
+
 
     }
 }
