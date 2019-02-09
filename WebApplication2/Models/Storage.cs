@@ -12,6 +12,7 @@ namespace WebApplication2.Models
     {
         private List<Degree> degreeList;
         private List<Course> courseList;
+        private List<Work> workList;
 
 
         public Storage(string degreesPath, string coursesPath)
@@ -19,6 +20,11 @@ namespace WebApplication2.Models
             degreeList = readDegreesTextFile(degreesPath);
             courseList = readCoursesTextFile(coursesPath);
 
+        }
+
+        public Storage(string workPath)
+        {
+            workList = readWorksTextFile(workPath);
         }
         
         public List<Degree> getDegreeList()
@@ -30,7 +36,40 @@ namespace WebApplication2.Models
         {
             return this.courseList;
         }
-        
+
+        public List<Work> getWorkExp()
+        {
+            return this.workList;
+        }
+
+        private List<Work> readWorksTextFile(string path)
+        {
+            List<Work> tempList = new List<Work>();
+
+            string line;
+
+            System.IO.StreamReader file = new System.IO.StreamReader(path);
+            
+            while ((line = file.ReadLine()) != null)
+            {
+
+                string[] firstHalf = line.Split(';');
+
+                string[] companyInfo = firstHalf[0].Split('~');
+
+                string[] skillsArr = firstHalf[2].Split('~');
+
+                Work temp = new Work(companyInfo[0], companyInfo[1], companyInfo[2], companyInfo[3], firstHalf[1].Split('~'), skillsArr);
+
+                tempList.Add(temp);
+
+            }
+
+            file.Close();
+
+            return tempList;
+        }
+
         private List<Course> readCoursesTextFile(string path)
         {
             List<Course> tempList = new List<Course>();
