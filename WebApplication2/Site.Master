@@ -45,7 +45,7 @@
                             <asp:HyperLink ID="education" cssClass="nav-link custom_link" runat="server" NavigateUrl="Education.aspx">Education</asp:HyperLink> 
                         </li>
                         <li class="nav-item custom_li">
-                            <asp:HyperLink ID="experience" cssClass="nav-link custom_link" runat="server" NavigateUrl="#">Experience</asp:HyperLink> 
+                            <asp:HyperLink ID="experience" cssClass="nav-link custom_link" runat="server" NavigateUrl="Experience.aspx">Experience</asp:HyperLink> 
                         </li>
                         <li class="nav-item custom_li">
                             <asp:HyperLink ID="skills" cssClass="nav-link custom_link" runat="server" NavigateUrl="#">Skills</asp:HyperLink> 

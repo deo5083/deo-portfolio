@@ -44,7 +44,7 @@ namespace WebApplication2
             {
                 return false;
             }
-            //ScriptManager.RegisterStartupScript(this, this.GetType(), "", "alert('" + labelText + "');", true);
+
         }
 
         private void GeneratePanels(List<Degree> _degreeList, List<Course> _courseList)
@@ -137,12 +137,7 @@ namespace WebApplication2
                     tempList.Add(course);
                 }
             }
-
-            //Label1.Text = tempList.Count().ToString();
-            //html += "<asp:Label runat='server' Text='" + course.getCourseName() + "'></asp:Label><hr />";
-
-
-            //relatedCoursesDivCol1.InnerHtml = html;
+            
 
         }
 
