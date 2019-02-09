@@ -11,37 +11,65 @@ namespace WebApplication2.Models
     public class Storage
     {
         private List<Degree> degreeList;
+        private List<Course> courseList;
 
-        public Storage(string path)
+
+        public Storage(string degreesPath, string coursesPath)
         {
-            degreeList = readDegreesTextFile(path);
+            degreeList = readDegreesTextFile(degreesPath);
+            courseList = readCoursesTextFile(coursesPath);
 
         }
         
-
         public List<Degree> getDegreeList()
         {
             return this.degreeList;
         }
-    
-        //public void setDegreeFile(string path)
-        //{
-        //    this.degreePath = path;
-        //}
+
+        public List<Course> getCoursesList()
+        {
+            return this.courseList;
+        }
+        
+        private List<Course> readCoursesTextFile(string path)
+        {
+            List<Course> tempList = new List<Course>();
+
+            string line;
+            string[] coursesString = { };
+
+            System.IO.StreamReader file = new System.IO.StreamReader(path);
+            
+            while ((line = file.ReadLine()) != null)
+            {
+                coursesString = line.Split('~');
+
+                string degree = coursesString[0];
+                string[] words = coursesString[1].Split(';');
+
+                
+
+                foreach (string course in words)
+                {
+                    Course tempCourse = new Course(degree, course);
+                    tempList.Add(tempCourse);
+                }
+                
+            }
+
+            file.Close();
+
+            return tempList;
+        }
 
         private List<Degree> readDegreesTextFile(string path)
         {
             List<Degree> tempList = new List<Degree>();
             
             string line;
-            
-            //string currentDirectory = Directory.GetCurrentDirectory();
-            //string filePath = System.IO.Path.Combine(currentDirectory, "Models", "degrees.txt");
-
-            // Read the file and display it line by line.  
+             
             System.IO.StreamReader file = new System.IO.StreamReader(path);
             
-
             while ((line = file.ReadLine()) != null)
             {
                 string[] words = line.Split(';');
@@ -53,8 +81,6 @@ namespace WebApplication2.Models
             }
 
             file.Close();
-            
-          
             
             return tempList;
         }

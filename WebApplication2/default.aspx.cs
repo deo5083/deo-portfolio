@@ -12,6 +12,30 @@ namespace WebApplication2.Models
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsMobileBrowser())
+            {
+                mobile.Visible = true;
+                not_mobile.Visible = false;
+            }
+            else
+            {
+                not_mobile.Visible = true;
+                mobile.Visible = false;
+            }
+        }
+
+        private bool IsMobileBrowser()
+        {
+            
+            HttpBrowserCapabilities myBrowserCaps = Request.Browser;
+            if (((System.Web.Configuration.HttpCapabilitiesBase)myBrowserCaps).IsMobileDevice)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
 
