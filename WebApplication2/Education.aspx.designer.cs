@@ -13,6 +13,15 @@ namespace WebApplication2 {
     public partial class Education {
         
         /// <summary>
+        /// HiddenButton_selectDegree control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button HiddenButton_selectDegree;
+        
+        /// <summary>
         /// cards_div control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.Label Label_gradDate;
         
         /// <summary>
+        /// panels_here control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl panels_here;
+        
+        /// <summary>
         /// HiddenField_selectDegree control.
         /// </summary>
         /// <remarks>
@@ -83,14 +101,5 @@ namespace WebApplication2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HiddenField_selectDegree;
-        
-        /// <summary>
-        /// HiddenButton_selectDegree control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button HiddenButton_selectDegree;
     }
 }

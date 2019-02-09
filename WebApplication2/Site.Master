@@ -12,6 +12,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+<%--    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet"/>--%>
+    <%--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">--%>
+
     <link href="Style/customCSS.css" rel="stylesheet" />
 
     <script src="Script/customJS.js"></script>
@@ -24,8 +27,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <nav class="navbar navbar-expand-lg navbar-dark MD_header" id="navbar">
             <div class="d-flex flex-grow-1 container">
                 <a class="navbar-brand d-lg-inline-block" href="default.aspx">David Ortiz</a>
                 <div class="w-50 text-right">
@@ -33,19 +36,19 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
-                <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarNav">
+                <div class="collapse navbar-collapse flex-grow-1 text-center" id="navbarNav">
                     <ul class="navbar-nav w-100 justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="default.aspx">Overview</a>
+                            <asp:HyperLink ID="overview" cssClass="nav-link custom_link" runat="server" NavigateUrl="default.aspx">Overview</asp:HyperLink> 
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Education.aspx">Education</a>
+                        <li class="nav-item custom_li">
+                            <asp:HyperLink ID="education" cssClass="nav-link custom_link" runat="server" NavigateUrl="Education.aspx">Education</asp:HyperLink> 
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Experience</a>
+                        <li class="nav-item custom_li">
+                            <asp:HyperLink ID="experience" cssClass="nav-link custom_link" runat="server" NavigateUrl="#">Experience</asp:HyperLink> 
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Skills</a>
+                        <li class="nav-item custom_li">
+                            <asp:HyperLink ID="skills" cssClass="nav-link custom_link" runat="server" NavigateUrl="#">Skills</asp:HyperLink> 
                         </li>
                     </ul>
                 </div>
@@ -58,18 +61,20 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+
+        
+
     </form>
 
-                <hr />
+    <hr />
 
     <footer class="footer">
         <div class="container text-left">
             <small style="color:grey" class="copyright">David Ortiz Resume - 2019</small>
-            <a href="mailto:davide_ortiz9@hotmail.com?Subject=FromOnlineResume:%20"><small style="color:grey" class="fa fa-lg fa-envelope social-icon pull-right">  </small></a>
+            <a href="mailto:davide_ortiz9@hotmail.com?Subject=FromOnlineResume:%20"><small style="color:grey" class="fa fa-lg fa-envelope social-icon pull-right"></small></a>
             <a href="https://www.linkedin.com/in/davidortiz83/" target="_blank"><small style="color:grey" class="fa fa-lg fa-linkedin social-icon pull-right"></small></a>
-
-        </div><!--End container-->
-    </footer><!--End footer 2-->
+        </div>
+    </footer>
     <br />
 
 
@@ -78,16 +83,31 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <%--<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>--%>
 
     <script>
 
-        $(document).ready(function() {
-            $.each($('#navbar').find('li'), function() {
-                $(this).toggleClass('active',  window.location.pathname.indexOf($(this).find('a').attr('href')) > -1);
-            }); 
-        });
+        //$(document).ready(function() {
+        //    $.each($('#navbar').find('li'), function() {
+        //        $(this).toggleClass('custom_active',  window.location.pathname.indexOf($(this).find('a').attr('href')) > -1);
+        //    }); 
+
+        //    //const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
+        //});
+
+    //    $(document).ready(function () {
+    //    var url = window.location;
+    //    $('.navbar .nav').find('.active').removeClass('active');
+    //    $('.navbar .nav li a').each(function () {
+    //        if (this.href == url) {
+    //            $(this).parent().addClass('active');
+    //        }
+    //    }); 
+    //});
 
     </script>
+  
+
     
     
 </body>
