@@ -11,7 +11,8 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">David Ortiz</h5>
+
+                        <h5 class="card-title text-center">David Ortiz</h5>
 
                         <div class="text-center">
                             <ul class="list-unstyled">
@@ -25,10 +26,11 @@
                                     </div>
                                 </li>
                                 <li class="text-left contact_li"><a href="mailto:davide_ortiz9@hotmail.com?Subject=FromOnlineResume:%20" class="contact_link"> <i class="fa fa fa-envelope"></i> davide_ortiz9@hotmail.com</a></li>
+                                <li class="text-left contact_li"><a href="https://github.com/deo5083?tab=repositories" class="contact_link" target="_blank"> <i class="fa fa fa-github-square"></i> GitHub Repositories</a></li>
                             </ul>
                         </div>
                         <div class="text-center">
-                            <a href="#" class="btn btn-dark" onclick="window.open('images/Resume_DavidOrtiz.pdf');">View resume</a>
+                            <button class="btn btn-dark" onclick="window.open('images/Resume_DavidOrtiz.pdf');">View resume</button>
                         </div>
                     </div>
                 </div>
