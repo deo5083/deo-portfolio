@@ -13,12 +13,39 @@ namespace WebApplication2 {
     public partial class WebForm1 {
         
         /// <summary>
-        /// div_here control.
+        /// overview_div control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_here;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl overview_div;
+        
+        /// <summary>
+        /// favorites_div control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl favorites_div;
+        
+        /// <summary>
+        /// div_workExp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_workExp;
+        
+        /// <summary>
+        /// div_projectExp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_projectExp;
     }
 }

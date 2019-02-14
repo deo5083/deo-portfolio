@@ -13,7 +13,7 @@ namespace WebApplication2.Models
         private List<Degree> degreeList;
         private List<Course> courseList;
         private List<Work> workList;
-
+        private List<Project> projectsList;
 
         public Storage(string degreesPath, string coursesPath)
         {
@@ -22,9 +22,10 @@ namespace WebApplication2.Models
 
         }
 
-        public Storage(string workPath)
+        public Storage(string workPath, string projectPath, string isExp)
         {
             workList = readWorksTextFile(workPath);
+            projectsList = readProjectsTextFile(projectPath);
         }
         
         public List<Degree> getDegreeList()
@@ -40,6 +41,38 @@ namespace WebApplication2.Models
         public List<Work> getWorkExp()
         {
             return this.workList;
+        }
+
+        public List<Project> getProjects()
+        {
+            return this.projectsList;
+        }
+
+        private List<Project> readProjectsTextFile(string path)
+        {
+            List<Project> tempList = new List<Project>();
+
+            string line;
+
+            System.IO.StreamReader file = new System.IO.StreamReader(path);
+
+            while ((line = file.ReadLine()) != null)
+            {
+                string[] sections = line.Split(';');
+                string school = sections[0].Split('~')[0];
+                string className = sections[0].Split('~')[1];
+                string[] items = sections[1].Split('~');
+                string[] skillsArr = sections[2].Split('~');
+                string date = sections[3];
+
+                Project tempProject = new Project(school, className, items, skillsArr, date);
+                tempList.Add(tempProject);
+
+            }
+
+            file.Close();
+
+            return tempList;
         }
 
         private List<Work> readWorksTextFile(string path)

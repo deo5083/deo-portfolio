@@ -77,5 +77,39 @@
     padding: 1em;
 }
 
+.link_nodecor {
+    text-decoration: none
+}
+
+#backToTopButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #6c757d;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none
+}
+
+    #backToTopButton:hover {
+        color: #fff;
+        background-color: #5a6268;
+        border-color: #545b62;
+    }
+
+.overview-divs {
+    cursor: pointer;
+    background-color: #e9ecef;
+}
+    .overview-divs:hover {
+        background-color: #d1d4d7;
+    }
 
 
