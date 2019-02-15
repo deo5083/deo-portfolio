@@ -1,0 +1,24 @@
+﻿JavaScript~5~language~5+
+jQuery~4~language~5+
+Responsive Bootstrap~5~language~5+
+SQL~4~language~4
+C++~4~language~5+
+C#~4~language~5+
+ASP.NET~5~language~5+
+Java~5~language~3
+Swift~2~language~2
+HTML~5~language~5+
+CSS~5~language~5+
+Postman~3~platforms~2
+Microsoft Azure~4~platforms~3
+Visual Studio~4~platforms~5+
+SQL Server Management Studio~4~platforms~4
+NetBeans~4~platforms~3
+Unity~2~platforms~1
+Xcode~3~platforms~2
+Object-oriented programming~5~knowledge~5+
+Procedural programming~5~knowledge~5+
+Agile methodology~5~knowledge~3
+Test driven programming~5~knowledge~2
+MVC architecture~5~knowledge~5+
+Source control~4~knowledge~5+

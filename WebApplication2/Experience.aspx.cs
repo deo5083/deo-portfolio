@@ -36,10 +36,22 @@ namespace WebApplication2
             
             foreach (Project proj in _projectList)
             {
+                bool isFavorite = false;
                 string id = proj.getItems()[0].Replace(' ', '_');
 
-                favorites_html_div += "<li> <a href='#" + id + "'>" + proj.getClassName() + "</a> </li>";
+                if(id.Contains("swimming_pool") || id.Contains("hotel_booking") || id.Contains("multiphase_project"))
+                {
+                    isFavorite = true;
+                }
+                
 
+                if (isFavorite)
+                {
+                    favorites_html_div += "<li> <a href='#" + id + "'>" + proj.getClassName() + "</a> </li>";
+
+                }
+
+                
             }
             favorites_html_div += "</ul>";
 
@@ -58,7 +70,7 @@ namespace WebApplication2
                 overview_html_div += "<li> <a href='#" + id + "'>" + job.getCompany() + "</a> </li>";
 
             }
-            overview_html_div += "</ul><ul>";
+            overview_html_div += "</ul><hr><ul>";
 
             foreach (Project proj in _projectList)
             {

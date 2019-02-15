@@ -55,7 +55,7 @@
 
     <br />
     <div class="collapse_content text-center">
-        Jump to:
+        <span class="text-muted small">Jump to:</span>
         <a href="#work_exp" class="badge badge-light">Work Section</a> 
         <span>&#8226;</span>
         <a href="#project_exp" class="badge badge-light">Projects Section</a>
