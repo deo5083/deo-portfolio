@@ -14,6 +14,12 @@ namespace WebApplication2.Models
         private List<Course> courseList;
         private List<Work> workList;
         private List<Project> projectsList;
+        private List<Skill> skillList;
+
+        public Storage(string skillsPath)
+        {
+            skillList = readSkillsTextFile(skillsPath);
+        }
 
         public Storage(string degreesPath, string coursesPath)
         {
@@ -46,6 +52,37 @@ namespace WebApplication2.Models
         public List<Project> getProjects()
         {
             return this.projectsList;
+        }
+
+        public List<Skill> getSkills()
+        {
+            return this.skillList;
+        }
+
+        private List<Skill> readSkillsTextFile(string path)
+        {
+            List<Skill> tempList = new List<Skill>();
+            
+            string line;
+
+            System.IO.StreamReader file = new System.IO.StreamReader(path);
+
+            while ((line = file.ReadLine()) != null)
+            {
+                string[] strings = line.Split('~');
+                string skill = strings[0];
+                string level = strings[1];
+                string type = strings[2];
+                string projects = strings[3];
+
+                Skill tempSkill = new Skill(skill, level, type, projects);
+                tempList.Add(tempSkill);
+
+            }
+
+            file.Close();
+            
+            return tempList;
         }
 
         private List<Project> readProjectsTextFile(string path)
